@@ -1,0 +1,74 @@
+input {
+	font-family: monospace;
+	font-size: 21px;
+	text-align: center;
+	max-width: 75%;
+}
+
+table {
+	text-align: center;
+	font-family: monospace;
+	width: 100%;
+}
+
+tr {
+	display: flex;
+	justify-content: center;
+}
+
+td {
+	padding: 10px;
+	border: 2px solid lightgray;
+}
+
+.validation {
+	color: red;
+	font-size: 12px;
+}
+
+.locked {
+	font-weight: bold;
+	font-size: 21px;
+}
+
+.w1 {
+	flex-grow: 1;
+	width: 12.5%;
+}
+
+.w2 {
+	flex-grow: 2;
+	width: 25%;
+}
+
+.w3 {
+	flex-grow: 3;
+	width: 37.5%;
+}
+
+.w4 {
+	flex-grow: 4;
+	width: 50%;
+}
+
+.w8 {
+	flex-grow: 8;
+	width: 100%:
+}
+
+#icmp_data {
+	width: 100%;
+}
+
+#output {
+	font-family: monospace;
+	text-align: center;
+}
+
+#output_bin {
+	margin: 1em auto;
+	width: 25%;
+	padding: 1em;
+	border-radius: 0.75em;
+	background-color: black;
+}

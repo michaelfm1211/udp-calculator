@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>UDP Calculator</title>
+	<link rel="stylesheet" href="mic.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1 class="jumbo">
+		IPv4 & UDP Packet Calculator<br>
+		<a href="https://github.com/michaelfm1211" class="footnote">
+			by michaelfm1211</a>
+		<p class="footnote">
+			Also see the accompanying
+			<a href="https://github.com/michaelfm1211/ping_calculator">
+				IPv4 & ICMP Echo Request Calculator</a>.
+		</p>
+	</h1>
+	<p class="footnote">
+		Note: these tables may not be to scale on your device. For
+		authoritative reference, you should read the relevant RFCs.
+	</p>
+	<h1>IP Header</h1>
+	<table>
+		<tr>
+			<td class="w1">
+				Version (4 bits)<br>
+				<span class="locked">4</span>
+			</td>
+			<td class="w1">
+				IHL (4 bits)<br>
+				<span class="locked">5</span>
+			</td>
+			<td class="w2">
+				DoS (8 bits)<br>
+				<span class="locked">00</span>
+			</td>
+			<td class="w4">
+				Total Length (16 bits)<br>
+				<span id="ip_len" class="locked">00 00</span>
+			</td>
+		</tr>
+		<tr>
+			<td class="w4">
+				Identification (16 bits)<br>
+				<input type="text" id="ip_id" placeholder="00 00"><br>
+				<span class="validation"></span>
+			</td>
+			<td class="w1">
+				Flags (3 bits)<br>
+				<span class="locked">b000</span>
+			</td>
+			<td class="w3">
+				Fragment Offset (13 bits)<br>
+				<span class="locked">b0000000000000</span>
+			</td>
+		</tr>
+		<tr>
+			<td class="w2">
+				TTL (8 bits)<br>
+				<input type="text" id="ip_ttl" placeholder="00"><br>
+				<span class="validation"></span>
+			</td>
+			<td class="w2">
+				Protocol (8 bits)<br>
+				<span class="locked">11</span>
+			</td>
+			<td class="w4">
+				Header Checksum (16 bits)<br>
+				<span id="ip_chk" class="locked">?? ??</span>
+			</td>
+		</tr>
+		<tr>
+			<td class="w8" style="grid-column: 1 / span 8">
+				Source Address (32 bits)<br>
+				<input type="text" id="ip_src" placeholder="127.0.0.1"><br>
+				<span class="validation"></span>
+			</td>
+		</tr>
+		<tr>
+			<td class="w8">
+				Destination Address (32 bits)<br>
+				<input type="text" id="ip_dst" placeholder="127.0.0.1"><br>
+				<span class="validation"></span>
+			</td>
+		</tr>
+	</table>
+
+	<h1>UDP Header</h1>
+	<table>
+		<tr>
+			<td class="w4">
+				Source Port (16 bits)<br>
+				<input type="text" id="udp_src" placeholder="1"><br>
+				<span class="validation"></span>
+			</td>
+			<td class="w4">
+				Destination Port (16 bits)<br>
+				<input type="text" id="udp_dst" placeholder="1"><br>
+				<span class="validation"></span>
+			</td>
+		</tr>
+		<tr>
+			<td class="w4">
+				UDP Length (16 bits)<br>
+				<span id="udp_len" class="locked">00 08</span>
+				<span class="validation"></span>
+			</td>
+			<td class="w4">
+				Optional Checksum (16 bits)<br>
+				<span id="udp_chk" class="locked">?? ??</span>
+				<input type="checkbox" id="udp_chk_enabled">
+			</td>
+		</tr>
+		<tr>
+			<td class="w8">
+				Payload Data (optional, 0-65507 bytes)<br>
+				"<input type="text" id="udp_data">"<br>
+				<span class="validation"></span>
+			</td>
+		</tr>
+	</table>
+
+	<h1>Hex Output</h1>
+	<div id="output">
+		<div id="output_bin"></div>
+		<span id="output_msg">
+			Click the container above to copy its contents.
+		</span>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/*
+ * Michael's General Purpose Styles
+ * modified for this calculator
+ */
+
+body {
+	line-height :1.6;
+	font-family: sans-serif;
+	color: #cfcfcf;
+	background-color: #1f1f1f;
+}
+
+h1,h2,h3 {
+	font-family: monospace;
+	line-height: 1.2;
+	background-color: #414141;
+}
+
+.jumbo {
+	padding: 1em;
+	overflow: auto;
+}
+
+
+a {
+	color: #56c8ff;
+}
+
+
+.footnote {
+	font-size: 15px;
+	font-style: italic;
+}
+
+input[type="text"] {
+	background: transparent;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	outline: none;
+	color: #EEE;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+input[type="text"]:hover {
+	border-color: #CCC;
+}
