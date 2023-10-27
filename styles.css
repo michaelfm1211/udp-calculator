@@ -71,4 +71,5 @@ td {
 	padding: 1em;
 	border-radius: 0.75em;
 	background-color: black;
+	cursor: pointer;
 }
